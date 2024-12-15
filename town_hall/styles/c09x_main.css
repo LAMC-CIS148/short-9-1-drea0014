@@ -86,12 +86,14 @@ header img {
 /* the styles for the main content */
 main {
     display: flex;
+    flex-wrap: nowrap; /* Ensure items stay in a single row */
+    justify-content: space-between; /* Distribute space between items */
 }
 
 /* the styles for the section */
 section {
-    flex-basis: 70%;
-    order: 2;
+    flex-basis: 50%; /* Adjust section width for better layout */
+    order: 2; /* Keep section as the second element */
 	padding: 0 2.5% 20px 2.5%;
 }
 section h1 {
@@ -141,10 +143,14 @@ article img {
 }
 
 /* the styles for the aside */
-aside {
-    flex-basis: 30%;
-    order: 1;
+aside#left {
+    flex-basis: 25%; /* Reduced width for the left aside */
+    order: 1; /* Keep left aside as the first element */
 	padding: 0 0 20px 2.5%;
+}
+aside#right {
+    flex-basis: 25%; /* Right aside with equal width to the left */
+    order: 3; /* Keep right aside as the last element */
 }
 aside h2 {
 	color: #800000;
@@ -206,6 +212,7 @@ footer p {
 	article img { max-width: 30%; }
 	#speakers {
 		column-count: 2;
+		column-gap: 1em; /* Add space between the columns */
 	}
 	#nav_menu {
 		display: none;
@@ -222,3 +229,4 @@ footer p {
 @media only screen and (max-width: 479px) {
 	body { font-size: 90%; }
 }
+
